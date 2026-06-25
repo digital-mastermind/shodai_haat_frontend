@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { PiShoppingCart, PiUserCircle } from "react-icons/pi";
 import { HomepageCarouselComponent } from "./components/HomepageCarouselComponent";
+import { HomepageFooter } from "./components/HomepageFooter";
 import HomepageSearchBarComponent from "./components/HomePageSearchBarComponent";
 
 export default function Homepage() {
@@ -72,9 +73,7 @@ export default function Homepage() {
 
       <div className="main-products"></div>
 
-      <div className="footer">
-        
-      </div>
+      <HomepageFooter />
     </>
   );
 }
