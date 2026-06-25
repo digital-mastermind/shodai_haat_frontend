@@ -137,35 +137,36 @@ function ProductCard({ product }: { product: ProductItem }) {
       </div>
 
       <div className="mt-3">
-        <div className="flex items-center gap-2">
-          <span className="rounded-[0.55rem] bg-green-600 px-2.5 py-1 text-[1.05rem] leading-none font-bold text-white">
+        <div className="flex items-center gap-3">
+          <span className="inline-flex items-center rounded-[7px] border-r-[3px] border-b-[3px] border-[#0d5f2a] bg-[#238b3f] px-[7px] py-1 pt-2 text-base leading-none font-bold text-white">
             ৳{product.price}
           </span>
-          <span className="text-base font-semibold text-slate-400 line-through">
+          <span className="text-sm text-slate-500 line-through">
             ৳{product.originalPrice}
           </span>
         </div>
 
-        <p className="mt-1 text-[0.82rem] font-bold uppercase tracking-[0.08em] text-green-600">
-          ৳{product.discountText}
-        </p>
+        <div className="wrapper flex items-center gap-2 mt-[-4px]">
+          <p className="mt-2 shrink-0 whitespace-nowrap text-xs leading-none font-bold uppercase tracking-normal text-[#238b3f]">
+            ৳{product.discountText}
+          </p>
+          <div className="mt-2 w-full border-t border-dashed border-slate-300" />
+        </div>
 
-        <div className="mt-2 border-t border-dashed border-slate-200" />
-
-        <h3 className="mt-3 min-h-18 text-[1.02rem] leading-7 font-semibold text-slate-900">
+        <h3 className="mt-1 min-h-17 font-semibold text-slate-900 line-clamp-3 text-sm  ">
           {product.name}
         </h3>
 
-        <p className="mt-1 text-[0.95rem] text-slate-500">{product.pack}</p>
+        <p className="text-xs text-slate-500">{product.pack}</p>
 
-        <div className="mt-3 inline-flex rounded-lg bg-cyan-50 px-2.5 py-1 text-[0.88rem] font-medium text-cyan-700">
+        <div className="mt-3 inline-flex rounded-lg bg-cyan-50 px-2.5 py-1 text-xs font-medium text-cyan-700">
           {product.tag}
         </div>
 
-        <div className="mt-3 flex items-center gap-1 text-[0.92rem] text-slate-600">
-          <Star className="size-4 fill-green-500 text-green-500" />
-          <span className="font-semibold text-green-700">{product.rating}</span>
-          <span>({product.reviews})</span>
+        <div className="mt-3 flex items-center gap-1 text-xs text-slate-600">
+          <Star className="size-3 fill-green-700 text-green-700" />
+          <span className="font-semibold leading-0 mt-1 text-green-700">{product.rating}</span>
+          <span className="leading-0 mt-1">({product.reviews})</span>
         </div>
       </div>
     </article>
