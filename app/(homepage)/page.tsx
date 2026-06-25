@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { PiShoppingCart, PiUserCircle } from "react-icons/pi";
 import { HomepageCarouselComponent } from "./components/HomepageCarouselComponent";
 import HomepageSearchBarComponent from "./components/HomePageSearchBarComponent";
@@ -8,9 +9,13 @@ export default function Homepage() {
       <div className="header-part border-b border-slate-200 bg-white">
         <div className="mx-auto grid w-full max-w-300 grid-cols-[auto_minmax(0,1fr)_auto] items-center gap-6 px-6 py-5">
           <div className="left-part shrink-0">
-            <h2 className=" text-2xl font-black tracking-tight text-violet-600">
-              shodai haat
-            </h2>
+            <Image
+              alt="Shodai Haat"
+              className="h-auto w-15 object-contain"
+              height={100}
+              src="/logos/shodai_haat_logo.png"
+              width={100}
+            />
           </div>
 
           <div className="mid-part min-w-0 w-full">
@@ -44,11 +49,32 @@ export default function Homepage() {
         <HomepageCarouselComponent />
       </div>
 
-      <div className="banner-part"></div>
+      <div className="banner-part  max-w-300 mx-auto w-full mt-10">
+        <div className="wrapper flex items-center gap-4 w-full">
+          <img
+            className="rounded-[10%] corner-squircle h-80 w-full object-cover"
+            src="https://i.pinimg.com/1200x/f1/f5/48/f1f548096667dd39160c9827ce9b9d93.jpg"
+            alt=""
+
+            height={320}
+            width={640}
+          />
+
+          <img
+            className="rounded-[10%] corner-squircle h-80 w-full object-cover"
+            src="https://i.pinimg.com/1200x/f2/09/35/f209353247afa6116778e0f6316ed3a3.jpg"
+            alt=""
+            height={320}
+            width={640}
+          />
+        </div>
+      </div>
 
       <div className="main-products"></div>
 
-      <div className="footer"></div>
+      <div className="footer">
+        
+      </div>
     </>
   );
 }
