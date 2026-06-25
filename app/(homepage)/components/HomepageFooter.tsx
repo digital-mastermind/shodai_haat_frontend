@@ -1,21 +1,34 @@
-import Link from "next/link";
 import { ArrowRight, Globe } from "lucide-react";
+import Link from "next/link";
+import { PiFarmDuotone, PiFlagBanner, PiFlagBannerFold, PiFlagBannerFoldDuotone, PiLightbulbFilamentBold, PiLightbulbFilamentDuotone } from "react-icons/pi";
 
 const footerColumns = [
   {
     title: "Shop by Category",
     links: [
       "Fresh Produce",
+      "Fresh Fruits",
+      "Vegetables",
       "Fish and Meat",
+      "Meat",
+      "Seafood",
       "Rice and Staples",
+      "Rice and Grains",
       "Spices",
+      "Bakery",
+      "Breakfast",
       "Snacks",
       "Beverages",
       "Dairy",
       "Frozen Food",
+      "Ready to Cook",
       "Personal Care",
+      "Beauty and Grooming",
+      "Health and Wellness",
+      "Cleaning Supplies",
       "Home Essentials",
       "Baby Care",
+      "Fashion",
       "Pet Supplies",
     ],
   },
@@ -24,13 +37,21 @@ const footerColumns = [
     links: [
       "How to Order",
       "Delivery Coverage",
+      "Same Day Delivery",
+      "Scheduled Delivery",
       "Track Your Order",
+      "Order Cancellation",
       "Return Policy",
       "Refund Information",
       "Payment Methods",
+      "Cash on Delivery",
+      "Digital Wallets",
       "Gift Cards",
       "Membership Benefits",
       "Offers and Discounts",
+      "Coupon Help",
+      "Product Availability",
+      "Report an Issue",
     ],
   },
   {
@@ -39,17 +60,29 @@ const footerColumns = [
       "Corporate Orders",
       "Wholesale Supply",
       "Restaurant Partnerships",
+      "Office Pantry Supply",
+      "Bulk Grocery Plans",
+      "Event Catering Supply",
       "Vendor Onboarding",
+      "Sell on Shodai Haat",
+      "Supplier Portal",
       "Promotional Campaigns",
+      "Brand Partnerships",
+      "B2B Credit Support",
     ],
     secondaryTitle: "Resources",
     secondaryLinks: [
       "Buying Guides",
       "Recipe Stories",
       "Seasonal Picks",
+      "Weekly Market Prices",
+      "Storage Tips",
+      "Nutrition Notes",
       "Food Safety Tips",
+      "Sustainable Shopping",
       "Community Updates",
       "FAQs",
+      "Blog",
     ],
   },
   {
@@ -58,13 +91,25 @@ const footerColumns = [
       "About Shodai Haat",
       "Careers",
       "Press",
+      "Our Stores",
+      "Our Farmers",
+      "Sustainability",
+      "Investor Relations",
       "Contact Sales",
+      "Privacy Policy",
+      "Terms and Conditions",
+      "Cookie Policy",
     ],
     secondaryTitle: "Support",
     secondaryLinks: [
       "Help Center",
       "Live Chat",
       "Call Us: +880 1700-000000",
+      "Email Support",
+      "Delivery Hotline",
+      "Complaint Center",
+      "Safety and Trust",
+      "Accessibility",
     ],
   },
 ];
@@ -72,7 +117,7 @@ const footerColumns = [
 export function HomepageFooter() {
   return (
     <footer className="mt-20 border-t border-slate-200 bg-slate-50">
-      <div className="mx-auto max-w-300 px-6">
+      <div className="mx-auto max-w-300">
         <div className="grid gap-10 border-x border-slate-200 px-4 py-12 sm:px-6 lg:grid-cols-4 lg:gap-0 lg:px-0">
           {footerColumns.map((column) => (
             <div
@@ -145,14 +190,17 @@ export function HomepageFooter() {
             </p>
           </div>
 
-          <div className="flex items-center justify-between gap-6 lg:justify-end">
-            <div className="h-10 w-10 rotate-45 rounded-sm bg-slate-950" />
-            <button
-              className="rounded-md bg-slate-950 px-5 py-3 text-sm font-semibold text-white transition hover:bg-slate-800"
-              type="button"
+          <div className="space-y-3">
+            <Link
+              href="#"
+              className="inline-flex items-center gap-2 text-base font-semibold text-violet-600 transition hover:text-violet-700"
             >
-              Chat now
-            </button>
+              <PiLightbulbFilamentBold className="size-4" />
+              Digital Mastermind
+            </Link>
+            <p className="text-sm text-slate-700">
+              Developed by Digital Mastermind.
+            </p>
           </div>
         </div>
       </div>
