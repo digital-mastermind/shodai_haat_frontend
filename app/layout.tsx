@@ -1,3 +1,5 @@
+import HeaderComponent from "@/components/layouts/HeaderComponent";
+import { HomepageFooter } from "@/components/layouts/HomepageFooter";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
@@ -36,7 +38,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${ttNormsPro.variable} h-full antialiased`}>
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        <HeaderComponent />
+        {children}
+        <HomepageFooter />
+      </body>
     </html>
   );
 }
