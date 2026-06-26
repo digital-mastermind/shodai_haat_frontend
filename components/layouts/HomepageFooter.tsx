@@ -126,7 +126,7 @@ export function HomepageFooter() {
             >
               <div className="space-y-8">
                 <div>
-                  <h3 className="text-lg font-semibold text-slate-950">
+                  <h3 className="text-base font-semibold text-slate-950">
                     {column.title}
                   </h3>
                   <ul className="mt-4 space-y-2.5 text-[15px] text-slate-600">
@@ -145,7 +145,7 @@ export function HomepageFooter() {
 
                 {column.secondaryTitle ? (
                   <div>
-                    <h3 className="text-lg font-semibold text-slate-950">
+                    <h3 className="text-base font-semibold text-slate-950">
                       {column.secondaryTitle}
                     </h3>
                     <ul className="mt-4 space-y-2.5 text-[15px] text-slate-600">
@@ -153,7 +153,7 @@ export function HomepageFooter() {
                         <li key={link}>
                           <Link
                             href="#"
-                            className="transition hover:text-slate-950"
+                            className="transition hover:text-slate-950 text-sm"
                           >
                             {link}
                           </Link>
