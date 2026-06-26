@@ -1,5 +1,6 @@
 import { Star } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 type ProductItem = {
   id: number;
@@ -371,7 +372,9 @@ export function HomepageFeaturedProducts() {
   return (
     <section className="mx-auto mt-14 w-full max-w-300 grid grid-cols-8 gap-2 gap-y-10">
       {featuredProducts.map((product) => (
-        <ProductCard key={product.id} product={product} />
+        <Link href={`/product/1`} key={product.id}>
+          <ProductCard product={product} />
+        </Link>
       ))}
     </section>
   );

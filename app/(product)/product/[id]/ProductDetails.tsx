@@ -22,6 +22,7 @@ import {
 import { cn } from "@/lib/utils";
 
 import { HomepageFeaturedProducts } from "@/app/(homepage)/components/HomepageFeaturedProducts";
+import { AppDownloadQrModal } from "@/components/AppDownloadQrModal";
 import type { ProductDetail } from "./product-data";
 
 type ProductDetailsProps = {
@@ -137,9 +138,11 @@ export function ProductDetails({ product }: ProductDetailsProps) {
             </div>
 
             <div className="mt-6">
-              <Button className="h-13 w-full rounded-lg bg-[#ff166a] text-base font-semibold text-white hover:bg-[#e81461]">
-                Add to Cart
-              </Button>
+              <AppDownloadQrModal>
+                <Button className="h-13 w-full rounded-lg bg-[#ff166a] text-base font-semibold text-white hover:bg-[#e81461]">
+                  Add to Cart
+                </Button>
+              </AppDownloadQrModal>
             </div>
           </div>
 
@@ -261,10 +264,12 @@ export function ProductDetails({ product }: ProductDetailsProps) {
                 </div>
               </div>
 
-              <Button className="h-13 min-w-40 rounded-lg bg-[#ff166a] border-r-[4px] border-b-[4px] border-[#7d002e] px-6 text-base font-semibold text-white hover:bg-[#e81461]">
-                <ShoppingCart className="size-4" />
-                Add to Cart
-              </Button>
+              <AppDownloadQrModal>
+                <Button className="h-13 min-w-40 rounded-lg bg-[#ff166a] border-r-[4px] border-b-[4px] border-[#7d002e] px-6 text-base font-semibold text-white hover:bg-[#e81461]">
+                  <ShoppingCart className="size-4" />
+                  Add to Cart
+                </Button>
+              </AppDownloadQrModal>
             </div>
           </motion.div>
         ) : null}
