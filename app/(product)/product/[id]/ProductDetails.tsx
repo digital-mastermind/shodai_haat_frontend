@@ -1,9 +1,14 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
-import { AnimatePresence, motion, useMotionValueEvent, useScroll } from "framer-motion";
+import {
+  AnimatePresence,
+  motion,
+  useMotionValueEvent,
+  useScroll,
+} from "framer-motion";
 import { Heart, ShieldCheck, ShoppingCart, Star, Truck } from "lucide-react";
 import Image from "next/image";
+import { useEffect, useRef, useState } from "react";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -16,8 +21,8 @@ import {
 } from "@/components/ui/carousel";
 import { cn } from "@/lib/utils";
 
-import type { ProductDetail } from "./product-data";
 import { HomepageFeaturedProducts } from "@/app/(homepage)/components/HomepageFeaturedProducts";
+import type { ProductDetail } from "./product-data";
 
 type ProductDetailsProps = {
   product: ProductDetail;
@@ -89,7 +94,7 @@ export function ProductDetails({ product }: ProductDetailsProps) {
                       "relative h-20 w-20 shrink-0 overflow-hidden rounded-md border bg-slate-50 transition",
                       selectedIndex === index
                         ? "border-slate-900 shadow-[0_0_0_2px_rgba(15,23,42,0.08)]"
-                        : "border-slate-200 hover:border-slate-400"
+                        : "border-slate-200 hover:border-slate-400",
                     )}
                   >
                     <Image
@@ -142,7 +147,9 @@ export function ProductDetails({ product }: ProductDetailsProps) {
             <div className="rounded-md border border-slate-200 bg-white p-6 sm:p-7">
               <div className="flex items-start justify-between gap-4">
                 <div>
-                  <p className="text-sm font-semibold text-slate-500">{product.brand}</p>
+                  <p className="text-sm font-semibold text-slate-500">
+                    {product.brand}
+                  </p>
                   <h1 className="mt-3 text-xl leading-tight font-semibold text-slate-950">
                     {product.name}
                   </h1>
@@ -171,13 +178,20 @@ export function ProductDetails({ product }: ProductDetailsProps) {
                 </span>
                 <div className="pb-1 ">
                   <p className="text-sm text-slate-500">
-                    MRP <span className="line-through">৳{product.originalPrice}</span>
+                    MRP{" "}
+                    <span className="line-through">
+                      ৳{product.originalPrice}
+                    </span>
                   </p>
-                  <p className="font-semibold text-green-700 text-sm">৳{discountAmount} OFF</p>
+                  <p className="font-semibold text-green-700 text-sm">
+                    ৳{discountAmount} OFF
+                  </p>
                 </div>
               </div>
 
-              <p className="mt-6 text-sm text-slate-600">{product.description}</p>
+              <p className="mt-6 text-sm text-slate-600">
+                {product.description}
+              </p>
 
               <div className="mt-8 grid gap-3 sm:grid-cols-2">
                 {product.deliveryBadges.map((badge, index) => (
@@ -190,7 +204,9 @@ export function ProductDetails({ product }: ProductDetailsProps) {
                     ) : (
                       <Truck className="mx-auto size-9 text-slate-500" />
                     )}
-                    <p className="mt-3 text-sm font-semibold text-slate-800">{badge}</p>
+                    <p className="mt-3 text-sm font-semibold text-slate-800">
+                      {badge}
+                    </p>
                   </div>
                 ))}
               </div>
@@ -213,7 +229,7 @@ export function ProductDetails({ product }: ProductDetailsProps) {
           </div>
         </section>
 
-        <HomepageFeaturedProducts/>
+        <HomepageFeaturedProducts />
       </main>
 
       <AnimatePresence>
@@ -227,14 +243,25 @@ export function ProductDetails({ product }: ProductDetailsProps) {
           >
             <div className="mx-auto flex w-full max-w-300 items-center gap-4 px-4 py-4 sm:px-6 lg:px-8">
               <div className="min-w-0 flex-1">
-                <p className="text-sm text-slate-500 line-through">৳{product.originalPrice}</p>
-                <div className="flex items-center gap-3">
-                  <p className="text-2xl font-bold text-slate-950">৳{product.price}</p>
-                  <p className="text-sm font-semibold text-green-700">৳{discountAmount} OFF</p>
+                <div className="flex items-end gap-4">
+                  <span className="inline-flex items-center rounded-lg border-r-[4px] border-b-[4px] border-[#0d5f2a] bg-[#238b3f] px-3 py-1 pt-2 text-2xl font-bold text-white">
+                    ৳{product.price}
+                  </span>
+                  <div className="pb-1 ">
+                    <p className="text-sm text-slate-500">
+                      MRP{" "}
+                      <span className="line-through">
+                        ৳{product.originalPrice}
+                      </span>
+                    </p>
+                    <p className="font-semibold text-green-700 text-sm">
+                      ৳{discountAmount} OFF
+                    </p>
+                  </div>
                 </div>
               </div>
 
-              <Button className="h-13 min-w-40 rounded-2xl bg-[#ff166a] px-6 text-base font-semibold text-white hover:bg-[#e81461]">
+              <Button className="h-13 min-w-40 rounded-lg bg-[#ff166a] border-r-[4px] border-b-[4px] border-[#7d002e] px-6 text-base font-semibold text-white hover:bg-[#e81461]">
                 <ShoppingCart className="size-4" />
                 Add to Cart
               </Button>
