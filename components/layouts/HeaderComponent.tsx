@@ -6,15 +6,15 @@ import Link from "next/link";
 
 export default function HeaderComponent() {
   return (
-    <div className="header-part border-b border-slate-200 bg-white">
+    <div className="header-part border-b border-slate-200 bg-white h-20">
       <div className="mx-auto grid w-full max-w-300 grid-cols-[auto_minmax(0,1fr)_auto] items-center gap-6 px-6 py-5">
         <div className="left-part shrink-0">
           <Link href="/">
           <Image
             alt="Shodai Haat"
-            className="h-auto w-15 object-contain"
+            className="h-auto w-24 object-contain"
             height={100}
-            src="/logos/shodai_haat_logo.png"
+            src="/logos/shodai_haat_logo.svg"
             width={100}
             />
             </Link>
