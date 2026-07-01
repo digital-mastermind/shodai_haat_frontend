@@ -1,10 +1,52 @@
+import type { Metadata } from "next";
 import Image from "next/image";
+import {
+  absoluteUrl,
+  createPageMetadata,
+  jsonLdScript,
+  siteConfig,
+} from "@/lib/seo";
 import { HomepageCarouselComponent } from "./components/HomepageCarouselComponent";
 import { HomepageFeaturedProducts } from "./components/HomepageFeaturedProducts";
 
+export const metadata: Metadata = createPageMetadata({
+  title: "Online Grocery and Essentials Shopping",
+  description:
+    "Order groceries, beauty products, personal care, baby care, and household essentials online from Shodai Haat with fast delivery.",
+  path: "/",
+});
+
 export default function Homepage() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        name: siteConfig.name,
+        url: siteConfig.url,
+        logo: absoluteUrl(siteConfig.defaultImage),
+      },
+      {
+        "@type": "WebSite",
+        name: siteConfig.name,
+        url: siteConfig.url,
+        description: siteConfig.description,
+        publisher: {
+          "@type": "Organization",
+          name: siteConfig.name,
+        },
+      },
+    ],
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: jsonLdScript(jsonLd),
+        }}
+      />
       <div className="categories-tab-icons border-b border-slate-200 bg-white ">
         <div className="wrapper max-w-300 mx-auto flex w-full items-center gap-8 h-10 px-4">
           <div className="icon flex items-center gap-2 cursor-pointer text-slate-950 border-b-3 h-10 border-violet-600">
